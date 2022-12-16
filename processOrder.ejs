@@ -7,6 +7,7 @@
         html {
     font-family: 'Courier New', Courier, monospace;
     background-color: bisque;
+	text-align: center;
 		}
 
     </style>
@@ -22,7 +23,7 @@
         <strong>Address: </strong><%- shipping %><br>
 
 		<p>Use this QR Code to check your order status</p>
-		<img src=https://qrtag.net/api/qr_transparent_6.svg?url=https://defiant-toad-ring.cyclic.app/processFindOrder?email=<%- email %> alt="qrtag">
+		<img src=https://qrtag.net/api/qr_transparent_6.svg?url=https://defiant-toad-ring.cyclic.app/processFindOrder?email=<%- email1 %>%40<%- email2 %> alt="qrtag">
 		<p>Note: QR Code Only Valid for 3 Days</p>
         
 	</div>

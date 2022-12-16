@@ -42,7 +42,6 @@ app.post("/processOrder", (request, response) => {
         await client.connect();
         let newOrder = {name: `${name}`, email:`${email}`, quantity:`${quantity}`, shipping:`${shipping}`};
         const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(newOrder);
-        console.log(id);
     } catch (e) {
         console.error(e);
     } finally {
@@ -57,6 +56,8 @@ main().catch(console.error);
       email: email,
       quantity: quantity,
       shipping: shipping,
+      email1: email.split("@")[0],
+      email2: email.split("@")[1],
   };
   response.render("processOrder", variables);
 });
@@ -123,13 +124,20 @@ app.post("/processReviewApplication", (request, response) => {
     quantity = "NONE";
     email = "NONE";
     shipping = "NONE";
+    email1 = "NONE";
+    email2 = "NONE";
+    
    }
+   email1 = email.split("@")[0];
+   email2 = email.split("@")[1];
    const variables = {
     name: name,
     email: email,
     quantity: quantity,
-    shipping: shipping
-  };
+    shipping: shipping,
+    email1: email1,
+    email2: email2 }
+
   response.render("processOrder", variables);
 
     } catch (e) {
@@ -149,6 +157,8 @@ app.get("/processFindOrder", function(request, res){
   let name;
   let quantity;
   let shipping;
+  let email1;
+  let email2;
   let email = request.query.email;
     console.log(email);
 
@@ -173,12 +183,19 @@ app.get("/processFindOrder", function(request, res){
     quantity = "NONE";
     email = "NONE";
     shipping = "NONE";
+    email1 = "NONE";
+    email2 = "NONE";
+    
    }
+   email1 = email.split("@")[0];
+   email2 = email.split("@")[1];
    const variables = {
     name: name,
     email: email,
     quantity: quantity,
-    shipping: shipping
+    shipping: shipping,
+    email1: email1,
+    email2: email2
   };
   res.render("processOrder", variables);
 
