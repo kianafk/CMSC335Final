@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<style>
+        html {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: bisque;
+		}
+	input {
+		width: 200px;
+	}
+
+    </style>
+	<title>Place an Order</title>
+</head>
+
+<body>
+	<h1>Place Order</h1>
+	<form action="./processOrder" method="post" >
+		<fieldset>
+			<p><label><strong>Name: </strong><input type="text" name="name"/></label></p>
+			<p><label><strong>Email Address: </strong><input type="email" name="email"  ></label></p>
+			<p><label><strong>Quantity: </strong><input type="number" name="quantity"/></label></p>
+			<p><label><strong>Shipping Address: </strong><input type="text" name="shipping"/></label></p>
+		</fieldset>
+
+		<br>
+		<input type="reset" />
+		<input type="submit" value="Submit Order"/>
+	</form>
+
+</body>
+
+</html>

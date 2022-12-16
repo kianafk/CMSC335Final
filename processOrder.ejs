@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<style>
+        html {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: bisque;
+		}
+
+    </style>
+	<title>Order Placed</title>
+</head>
+
+<body>
+	<h1>Order Placed</h1>
+	<div>
+		<strong>Name: </strong><%- name %><br>
+		<strong>Email Address: </strong><%- email %><br>
+        <strong>Quantity: </strong><%- quantity %><br>
+        <strong>Address: </strong><%- shipping %><br>
+
+		<p>Use this QR Code to check your order status</p>
+		<img src="https://qrtag.net/api/qr_transparent_6.svg?url=http://localhost:4000/processFindOrder?email=john%40me" alt="qrtag">
+		<p>Note: QR Code Only Valid for 3 Days</p>
+        
+	</div>
+</body>
+
+</html>
